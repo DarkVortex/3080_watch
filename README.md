@@ -1,33 +1,7 @@
 # 3080_watch
 
 In order to properly install this, you will need:
+Dependencies: bs4, requests, smtplib, time, os, json, pathlib, difflib
 
--bs4
-
--requests
-
--smtplib
-
--time
-
--os
-
--json
-
--pathlib
-
--difflib
-
-You will also need to create a "webhooks.json" file in the same directory as start.py, of the following format:
-
-{
-
-    "WEBHOOKS":[
-        WEBHOOK_1,
-
-        WEBHOOK_2,
-
-        etc.
-
-    ]
-}
+To set up, please first run init.sh. This will create files necessary, as well as schedule the auto-update and execution of the task on startup,
+as well as set the Raspberry Pi to restart at 11:50PM each day (pulling necessary github updates as well).
