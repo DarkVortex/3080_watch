@@ -1,7 +1,5 @@
 print('Code loaded. Beginning Imports!')
-import bs4
 import requests
-import smtplib
 import time
 import os
 import json
