@@ -1,3 +1,4 @@
+print('Code loaded. Beginning Imports!')
 import bs4
 import requests
 import smtplib
@@ -6,7 +7,7 @@ import os
 import json
 from pathlib import Path
 from difflib import SequenceMatcher
-
+print('Imports complete.')
 def similar(a,b):
     return SequenceMatcher(None,a,b).ratio()
 
@@ -16,13 +17,14 @@ with open('webhooks.json') as json_file:
     data = json.load(json_file)
     webhooks = data['WEBHOOKS']
 
+print('Stored Webhooks:')
 print(webhooks)
-input()
 
 NVIDIA_URL = 'https://store.nvidia.com/store?Action=AddItemToRequisition&SiteID=nvidia&Locale=en_US&productID=5438481700&quantity=1'
 EVENT = '3080_available'
 
 GET_URL = 'https://maker.ifttt.com/trigger/'+EVENT+'/with/key/'
+print('Starting Page Watch.')
 getPage = requests.get(NVIDIA_URL)
 getPage.raise_for_status()
 prev_text = getPage.text
