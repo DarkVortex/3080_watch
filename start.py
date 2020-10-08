@@ -30,7 +30,7 @@ getPage = requests.get(NVIDIA_URL)
 getPage.raise_for_status()
 prev_text = getPage.text
 COUNT_TIME = 15
-TOLERANCE = 0.999
+TOLERANCE = 0.99
 changed = False
 while True: #loop forever
     for i in range(1,COUNT_TIME+1):
